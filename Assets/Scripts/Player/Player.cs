@@ -1,8 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : Aircraft, IObjectContralable<Aircraft>
+public class Player : Aircraft, IObjectContralable<Player, float>
 {
     private void Start()
     {
@@ -25,16 +26,16 @@ public class Player : Aircraft, IObjectContralable<Aircraft>
 
     public override void Dead()
     {
+        Destroy(gameObject);
         OnDead?.Invoke();
     }
 
-    public void Move(Vector2 direction)
+    public void Move(Vector2 direction, float input)
     {
         if (controlSwitch == ControlSwitch.On)
         {
             rb.MovePosition(rb.position + direction * velocity * Time.fixedDeltaTime);
-            animator.SetFloat("Heel", rb.angularVelocity);
-            Debug.Log(rb.angularVelocity);
+            animator.SetFloat("Heel", input);
         }
     }
 
@@ -43,7 +44,9 @@ public class Player : Aircraft, IObjectContralable<Aircraft>
         transform.position = position;
     }
 
-    public Aircraft GetValue()
+    public int GetLives() => live;
+
+    public Player GetValue()
     {
         return this;
     }
