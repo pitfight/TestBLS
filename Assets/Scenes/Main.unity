@@ -216,6 +216,23 @@ Transform:
   m_Father: {fileID: 1875928457}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &996511446 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6493170678510280632, guid: 40fc49c3ccbdc4ca8ab04c97dd0d4ccd, type: 3}
+  m_PrefabInstance: {fileID: 6493170678096974190}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &996511449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 996511446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30794f64f3b194c0c8901f30d7cf30b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1084239812
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,6 +357,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1229489292}
+  - component: {fileID: 1229489293}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -362,6 +380,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1229489293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229489291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de2c2de785b8b46e594f52cea17f0d2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  background: {fileID: 0}
+  spawnPointPlayer: {x: 0, y: 0}
+  spawnPointMap: {x: 0, y: 0}
+  spawnPointsAI: []
+  playerPrefab: {fileID: 0}
+  aIPrefab: {fileID: 0}
+  mapPrefab: {fileID: 0}
 --- !u!1 &1595059357
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,6 +460,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1875928457}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1862386360
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1862386361}
+  m_Layer: 0
+  m_Name: MapSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: -5938655980376293919, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1862386361
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862386360}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 12.75, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1875928456
 GameObject:
@@ -525,9 +593,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 996511449, guid: 40fc49c3ccbdc4ca8ab04c97dd0d4ccd, type: 3}
+      propertyPath: m_Constraints
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6493170678043533984, guid: 40fc49c3ccbdc4ca8ab04c97dd0d4ccd, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1590952335, guid: ac373475efa5b4ad7964f7c0e8dcb5a0, type: 3}
     - target: {fileID: 6493170678510280632, guid: 40fc49c3ccbdc4ca8ab04c97dd0d4ccd, type: 3}
       propertyPath: m_Name
-      value: AircraftPrefab
+      value: PlayerAircraftPrefab
       objectReference: {fileID: 0}
     - target: {fileID: 6493170678510280633, guid: 40fc49c3ccbdc4ca8ab04c97dd0d4ccd, type: 3}
       propertyPath: m_RootOrder
