@@ -1,0 +1,101 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TexturesAtlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 1776d621717b142f3a507af656255ab5, type: 3}
+    - {fileID: 2800000, guid: 12f832b945fed42be8b4411ffcb3ba62, type: 3}
+    - {fileID: 2800000, guid: ac373475efa5b4ad7964f7c0e8dcb5a0, type: 3}
+    - {fileID: 2800000, guid: 8317e55f96a3b424797c43c9db7055ac, type: 3}
+    - {fileID: 2800000, guid: 76384569d6628450092b4ad2c8841860, type: 3}
+    - {fileID: 2800000, guid: d7c7de03f0ab1431faf94467b37ba04e, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: -770779940, guid: 1776d621717b142f3a507af656255ab5, type: 3}
+  - {fileID: -677413813, guid: 1776d621717b142f3a507af656255ab5, type: 3}
+  - {fileID: 1783531979, guid: 1776d621717b142f3a507af656255ab5, type: 3}
+  - {fileID: -1347550559, guid: 1776d621717b142f3a507af656255ab5, type: 3}
+  - {fileID: 518756168, guid: 1776d621717b142f3a507af656255ab5, type: 3}
+  - {fileID: 2036078586, guid: 1776d621717b142f3a507af656255ab5, type: 3}
+  - {fileID: 21300000, guid: d7c7de03f0ab1431faf94467b37ba04e, type: 3}
+  - {fileID: -1590952335, guid: ac373475efa5b4ad7964f7c0e8dcb5a0, type: 3}
+  - {fileID: -2136706364, guid: ac373475efa5b4ad7964f7c0e8dcb5a0, type: 3}
+  - {fileID: 334474567, guid: ac373475efa5b4ad7964f7c0e8dcb5a0, type: 3}
+  - {fileID: -1265831452, guid: ac373475efa5b4ad7964f7c0e8dcb5a0, type: 3}
+  - {fileID: 2103796005, guid: ac373475efa5b4ad7964f7c0e8dcb5a0, type: 3}
+  - {fileID: -1925935153, guid: ac373475efa5b4ad7964f7c0e8dcb5a0, type: 3}
+  - {fileID: 21300000, guid: 76384569d6628450092b4ad2c8841860, type: 3}
+  - {fileID: 506492629, guid: 12f832b945fed42be8b4411ffcb3ba62, type: 3}
+  - {fileID: -1328001491, guid: 12f832b945fed42be8b4411ffcb3ba62, type: 3}
+  - {fileID: 1935844802, guid: 12f832b945fed42be8b4411ffcb3ba62, type: 3}
+  - {fileID: -1021598951, guid: 12f832b945fed42be8b4411ffcb3ba62, type: 3}
+  - {fileID: -817018139, guid: 12f832b945fed42be8b4411ffcb3ba62, type: 3}
+  - {fileID: -927612423, guid: 12f832b945fed42be8b4411ffcb3ba62, type: 3}
+  - {fileID: -1932408343, guid: 8317e55f96a3b424797c43c9db7055ac, type: 3}
+  - {fileID: 1090843791, guid: 8317e55f96a3b424797c43c9db7055ac, type: 3}
+  - {fileID: -1992655150, guid: 8317e55f96a3b424797c43c9db7055ac, type: 3}
+  - {fileID: -1001450175, guid: 8317e55f96a3b424797c43c9db7055ac, type: 3}
+  - {fileID: -1005822358, guid: 8317e55f96a3b424797c43c9db7055ac, type: 3}
+  - {fileID: -31057563, guid: 8317e55f96a3b424797c43c9db7055ac, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - enemy2_tiles_2
+  - enemy2_tiles_3
+  - enemy2_tiles_0
+  - enemy2_tiles_1
+  - enemy2_tiles_4
+  - enemy2_tiles_5
+  - world_tiles
+  - player_tiles_3
+  - player_tiles_2
+  - player_tiles_1
+  - player_tiles_0
+  - player_tiles_5
+  - player_tiles_4
+  - bullet
+  - enemy_tiles_2
+  - enemy_tiles_3
+  - enemy_tiles_0
+  - enemy_tiles_1
+  - enemy_tiles_4
+  - enemy_tiles_5
+  - universal_tiles_5
+  - universal_tiles_4
+  - universal_tiles_1
+  - universal_tiles_0
+  - universal_tiles_3
+  - universal_tiles_2
+  m_RenderDataMap: {}
+  m_Tag: TexturesAtlas
+  m_IsVariant: 0
