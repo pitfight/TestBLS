@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 996511449}
   - component: {fileID: 4719210174471417326}
   m_Layer: 0
-  m_Name: AircraftPrefab
+  m_Name: PlayerAircraftPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

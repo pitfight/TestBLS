@@ -2,20 +2,27 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AI : Aircraft<IObjectContralable>, IObjectContralable
+public class AI : Aircraft, IObjectContralable
 {
     [SerializeField] private SpriteRenderer sRenderer;
 
-    public override void Setup(AircraftControlType controlType, int live)
+    private void Awake()
     {
-        this.controlType = AircraftControlType.AI;
+        Setup(1);
+    }
+
+    private void OnEnable()
+    {
+        SetControl(ControlSwitch.On);
+    }
+
+    public override void Setup(int live)
+    {
         this.live = live;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
 
         SetControl(ControlSwitch.Off);
-
-        SetValue(this);
     }
 
     public override void TakeDamage()

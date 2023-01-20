@@ -185,6 +185,32 @@ Transform:
   m_Father: {fileID: 1875928457}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &550101835 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1866740620950656758, guid: 9e735c3211ddc4166877adf581614f58, type: 3}
+  m_PrefabInstance: {fileID: 1866740621482898877}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &550101838
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 550101835}
+  m_BodyType: 1
+  m_Simulated: 0
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &847589546
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,12 +419,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   background: {fileID: 0}
-  spawnPointPlayer: {x: 0, y: 0}
-  spawnPointMap: {x: 0, y: 0}
-  spawnPointsAI: []
-  playerPrefab: {fileID: 0}
-  aIPrefab: {fileID: 0}
-  mapPrefab: {fileID: 0}
+  spawnPointPlayer: {fileID: 451179279}
+  spawnPointMap: {fileID: 1862386361}
+  spawnPointsAI:
+  - {fileID: 847589547}
+  - {fileID: 62800861}
+  - {fileID: 1595059358}
+  - {fileID: 1838052908}
+  - {fileID: 1084239813}
+  playerPrefab: {fileID: 6493170678510280632, guid: 40fc49c3ccbdc4ca8ab04c97dd0d4ccd, type: 3}
+  projectilePrefab: {fileID: 9114073086592060608, guid: efcce5ea19955499492ed38d7b53862b, type: 3}
+  projectileCountSpawn: 15
+  aIPrefab: {fileID: 8379122485863576468, guid: f6c503aeff1ca49e79cd79aba6a48074, type: 3}
+  aICountSpawn: 15
+  mapPrefab: {fileID: 1866740620950656758, guid: 9e735c3211ddc4166877adf581614f58, type: 3}
+  mapCountSpawn: 2
 --- !u!1 &1595059357
 GameObject:
   m_ObjectHideFlags: 0

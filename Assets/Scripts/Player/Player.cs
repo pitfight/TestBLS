@@ -2,18 +2,25 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : Aircraft<IObjectContralable>, IObjectContralable
+public class Player : Aircraft, IObjectContralable
 {
-    public override void Setup(AircraftControlType controlType, int live)
+    private void Awake()
     {
-        this.controlType = AircraftControlType.Player;
+        Setup(3);
+    }
+
+    private void OnEnable()
+    {
+        SetControl(ControlSwitch.On);
+    }
+
+    public override void Setup(int live)
+    {
         this.live = live;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
 
         SetControl(ControlSwitch.Off);
-
-        SetValue(this);
     }
 
     public override void TakeDamage()
