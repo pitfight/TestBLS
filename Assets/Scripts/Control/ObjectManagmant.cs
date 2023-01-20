@@ -6,6 +6,7 @@ using UnityEngine.Pool;
 
 public class ObjectManagmant : MonoBehaviour
 {
+    public bool startGame = false;
     [SerializeField] private GameObject background;
 
     [SerializeField] private Transform spawnPointPlayer;
@@ -20,16 +21,21 @@ public class ObjectManagmant : MonoBehaviour
     [SerializeField] private GameObject mapPrefab;
     [SerializeField] private int mapCountSpawn;
 
-    private IObjectContralable playerControlable;
-    private IObjectContralable[] mapsControlables;
-    private IObjectContralable[] projectileControlables;
-    private IObjectContralable[] aiControlables;
+    private IObjectContralable<Aircraft> playerControlable;
+    private IObjectContralable<Map>[] mapsControlables;
+    private IObjectContralable<Projectile>[] projectileControlables;
+    private IObjectContralable<Aircraft>[] aiControlables;
 
     private void Awake()
     {
+        playerControlable = Instantiate(playerPrefab, spawnPointPlayer.position, Quaternion.identity).GetComponent<IObjectContralable<Aircraft>>();
+
         InitIObjects(ObjectPool.GetCreatePool(projectilePrefab, projectileCountSpawn), ref projectileControlables);
-        InitIObjects(ObjectPool.GetCreatePool(mapPrefab, projectileCountSpawn), ref mapsControlables);
-        InitIObjects(ObjectPool.GetCreatePool(aIPrefab, projectileCountSpawn), ref aiControlables);
+        InitIObjects(ObjectPool.GetCreatePool(mapPrefab, mapCountSpawn), ref mapsControlables);
+        InitIObjects(ObjectPool.GetCreatePool(aIPrefab, aICountSpawn), ref aiControlables);
+
+        //foreach (var s in mapsControlables)
+        //    Debug.Log(s == null);
     }
 
     private void OnEnable()
@@ -44,13 +50,32 @@ public class ObjectManagmant : MonoBehaviour
 
     private void FixedUpdate()
     {
-
+        if (startGame)
+        {
+            float input = Input.GetAxis("Vertical");
+            if (input != 0)
+            {
+                if (input > 0)
+                    playerControlable.Move(Vector2.up);
+                if (input < 0)
+                    playerControlable.Move(Vector2.down);
+            }
+            MoveObjects(mapsControlables, Vector2.left);
+            MoveObjects(projectileControlables, Vector2.right);
+            MoveObjects(aiControlables, Vector2.left);
+        }
     }
 
-    private void InitIObjects(List<GameObject> list, ref IObjectContralable[] objectContralables)
+    private void InitIObjects<T>(List<GameObject> list, ref IObjectContralable<T>[] objectContralables)
     {
-        objectContralables = new IObjectContralable[list.Count];
+        objectContralables = new IObjectContralable<T>[list.Count];
         for (int i = 0; i < list.Count; i++)
-            objectContralables[i] = list[i].GetComponent<IObjectContralable>();
+            objectContralables[i] = list[i].GetComponent<IObjectContralable<T>>();
+    }
+
+    private void MoveObjects<T>(IObjectContralable<T>[] objects, Vector2 direction)
+    {
+        foreach (var obj in objects)
+            obj.Move(direction);
     }
 }

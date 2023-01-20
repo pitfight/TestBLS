@@ -2,16 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : Aircraft, IObjectContralable
+public class Player : Aircraft, IObjectContralable<Aircraft>
 {
-    private void Awake()
+    private void Start()
     {
         Setup(3);
-    }
-
-    private void OnEnable()
-    {
-        SetControl(ControlSwitch.On);
     }
 
     public override void Setup(int live)
@@ -19,15 +14,13 @@ public class Player : Aircraft, IObjectContralable
         this.live = live;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
-
-        SetControl(ControlSwitch.Off);
     }
 
     public override void TakeDamage()
     {
         live--;
         if (live == 0) Dead();
-        else OnTakeDamage?.Invoke();
+        else OnHit?.Invoke();
     }
 
     public override void Dead()
@@ -39,17 +32,19 @@ public class Player : Aircraft, IObjectContralable
     {
         if (controlSwitch == ControlSwitch.On)
         {
-
+            rb.MovePosition(rb.position + direction * velocity * Time.fixedDeltaTime);
+            animator.SetFloat("Heel", rb.angularVelocity);
+            Debug.Log(rb.angularVelocity);
         }
     }
 
     public void Spawn(Vector2 position)
     {
-        throw new System.NotImplementedException();
+        transform.position = position;
     }
 
-    public void SetControl(ControlSwitch controlSwitch)
+    public Aircraft GetValue()
     {
-        this.controlSwitch = controlSwitch;
+        return this;
     }
 }

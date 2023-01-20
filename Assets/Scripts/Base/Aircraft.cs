@@ -9,9 +9,6 @@ public abstract class Aircraft : ObjectBase
     protected Animator animator;
     protected int live;
 
-    public Action OnDead;
-    public Action OnTakeDamage;
-
     public abstract void Setup(int live);
     public abstract void TakeDamage();
     public abstract void Dead();

@@ -127,6 +127,7 @@ GameObject:
   - component: {fileID: 996511448}
   - component: {fileID: 996511449}
   - component: {fileID: 4719210174471417326}
+  - component: {fileID: 6096727608369820691}
   m_Layer: 0
   m_Name: PlayerAircraftPrefab
   m_TagString: Untagged
@@ -142,7 +143,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6493170678510280632}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -210,3 +211,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30794f64f3b194c0c8901f30d7cf30b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  velocity: 1
+  rb: {fileID: 996511449}
+--- !u!95 &6096727608369820691
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6493170678510280632}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 094f23e7bda5e409f84232bb6a5273a2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
