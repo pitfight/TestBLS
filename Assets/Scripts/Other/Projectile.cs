@@ -34,7 +34,7 @@ public class Projectile : ObjectBase , IObjectContralable<Projectile, Action<Gam
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        ObjectPool.Recycle(gameObject);
         OnHit?.Invoke();
+        ObjectPool.Recycle(gameObject);
     }
 }

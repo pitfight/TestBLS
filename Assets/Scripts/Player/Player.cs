@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Player : Aircraft, IObjectContralable<Player, float>
 {
-    private void Start()
+    private void Awake()
     {
         Setup(3);
     }
@@ -26,8 +26,9 @@ public class Player : Aircraft, IObjectContralable<Player, float>
 
     public override void Dead()
     {
-        Destroy(gameObject);
+        //Setup(3);
         OnDead?.Invoke();
+        Destroy(gameObject);
     }
 
     public void Move(Vector2 direction, float input)

@@ -151,9 +151,10 @@ public class ObjectManagmant : MonoBehaviour
 
     private void StartGame()
     {
-        var playerGO = Instantiate(playerPrefab, spawnPointPlayer.position, Quaternion.identity);
-        spawnPointProjectile = playerGO.transform.Find("FirePoint").transform;
-        playerControlable = playerGO.GetComponent<IObjectContralable<Player, float>>();
+        var player = Instantiate(playerPrefab, spawnPointPlayer.position, Quaternion.identity);
+
+        spawnPointProjectile = player.transform.Find("FirePoint").transform;
+        playerControlable = player.GetComponent<IObjectContralable<Player, float>>();
 
         displayManager.ShowUiGame(true);
         displayManager.UpdateScore(currScore);
